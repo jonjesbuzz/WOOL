@@ -1,0 +1,21 @@
+<%= form_for(@lora_message) do |f| %>
+  <% if @lora_message.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@lora_message.errors.count, "error") %> prohibited this lora_message from being saved:</h2>
+
+      <ul>
+      <% @lora_message.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :payload %><br>
+    <%= f.text_field :payload %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

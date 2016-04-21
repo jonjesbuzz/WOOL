@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Lora Messages</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Payload</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @lora_messages.each do |lora_message| %>
+      <tr>
+        <td><%= lora_message.payload %></td>
+        <td><%= link_to 'Show', lora_message %></td>
+        <td><%= link_to 'Edit', edit_lora_message_path(lora_message) %></td>
+        <td><%= link_to 'Destroy', lora_message, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
