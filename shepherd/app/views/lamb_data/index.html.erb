@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Lamb Data</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Identifier</th>
+      <th>Activity</th>
+      <th>Light</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @lamb_data.each do |lamb_datum| %>
+      <tr>
+        <td><%= lamb_datum.identifier %></td>
+        <td><%= lamb_datum.activity %></td>
+        <td><%= lamb_datum.light %></td>
+        <td><%= link_to 'Show', lamb_datum %></td>
+        <td><%= link_to 'Edit', edit_lamb_datum_path(lamb_datum) %></td>
+        <td><%= link_to 'Destroy', lamb_datum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Lamb datum', new_lamb_datum_path %>

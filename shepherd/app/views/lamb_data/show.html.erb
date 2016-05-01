@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Identifier:</strong>
+  <%= @lamb_datum.identifier %>
+</p>
+
+<p>
+  <strong>Activity:</strong>
+  <%= @lamb_datum.activity %>
+</p>
+
+<p>
+  <strong>Light:</strong>
+  <%= @lamb_datum.light %>
+</p>
+
+<%= link_to 'Edit', edit_lamb_datum_path(@lamb_datum) %> |
+<%= link_to 'Back', lamb_data_path %>

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
+  resources :lamb_data
   resources :lora_messages
-  root 'lora_messages#index'
+  root 'lamb_data#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

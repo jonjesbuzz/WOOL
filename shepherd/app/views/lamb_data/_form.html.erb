@@ -1,0 +1,29 @@
+<%= form_for(@lamb_datum) do |f| %>
+  <% if @lamb_datum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@lamb_datum.errors.count, "error") %> prohibited this lamb_datum from being saved:</h2>
+
+      <ul>
+      <% @lamb_datum.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :identifier %><br>
+    <%= f.number_field :identifier %>
+  </div>
+  <div class="field">
+    <%= f.label :activity %><br>
+    <%= f.text_field :activity %>
+  </div>
+  <div class="field">
+    <%= f.label :light %><br>
+    <%= f.text_field :light %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
