@@ -15,7 +15,7 @@
   <tbody>
     <% @lamb_data.each do |lamb_datum| %>
       <tr>
-        <td><%= lamb_datum.identifier %></td>
+        <td><%= lamb_datum.identifier.to_i.to_s(16).upcase %></td>
         <td><%= lamb_datum.activity %></td>
         <td><%= lamb_datum.light %></td>
         <td><%= link_to 'Show', lamb_datum %></td>
