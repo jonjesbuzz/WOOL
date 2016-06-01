@@ -1,7 +1,10 @@
 # WOOL - Wireless Omnisensor Over LoRaWAN™
 
+## Protocol Specification
+For our specific implementation, WOOL packs a 16-bit identifier, a 16-bit value representing light intensity, and an 8-bit value representing motion activity, and sends the hexadecimal string over the network to the Conduit station.  A Node-RED instance then decodes the package and sends it to the Shepherd backend server (Ruby on Rails).
+
 ## Connecting to mDot (UDK aka large board)
-Instructions tested on Mac.  Windows users… uh… ¯\\\_(ツ)\_/¯ Hope you know how to talk serial on a COM port?
+Instructions tested on Mac.  Windows users will need a serial terminal application that can communicate over a COM port.
 
 1. Connect a micro-USB cable to the board and your laptop.
 2. Open Terminal (or a terminal emulator)

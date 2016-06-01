@@ -1,26 +1,29 @@
 <p id="notice"><%= notice %></p>
+<h1>Shepherd</h1>
+<h2>LAMBS Data</h2>
+<p>
+  <%= link_to 'Download as CSV', lamb_data_path(format: :csv) %>
+</p>
 
-<h1>Listing Lamb Data</h1>
-
-<table>
+<table class = "centered">
   <thead>
     <tr>
+      <th>Timestamp</th>
       <th>Identifier</th>
       <th>Activity</th>
       <th>Light</th>
-      <th colspan="3"></th>
+      <th colspan="2"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @lamb_data.each do |lamb_datum| %>
       <tr>
-        <td><%= lamb_datum.identifier.to_i.to_s(16).upcase %></td>
+        <td><%= lamb_datum.created_at.to_formatted_s(:long) %></td>
+        <td class = "centered"><%= lamb_datum.hex_identifier %></td>
         <td><%= lamb_datum.activity %></td>
         <td><%= lamb_datum.light %></td>
         <td><%= link_to 'Show', lamb_datum %></td>
-        <td><%= link_to 'Edit', edit_lamb_datum_path(lamb_datum) %></td>
-        <td><%= link_to 'Destroy', lamb_datum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

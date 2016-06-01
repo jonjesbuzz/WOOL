@@ -4,7 +4,13 @@ class LambDataController < ApplicationController
   # GET /lamb_data
   # GET /lamb_data.json
   def index
-    @lamb_data = LambDatum.all
+    @lamb_data = LambDatum.all.order(:created_at).reverse_order
+
+    respond_to do |format|
+      format.html
+      format.json
+      format.csv { send_data @lamb_data.to_csv, filename: "lambdata-#{Date.today}.csv" }
+    end
   end
 
   # GET /lamb_data/1

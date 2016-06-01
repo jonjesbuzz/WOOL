@@ -13,3 +13,7 @@
  *= require_tree .
  *= require_self
  */
+
+body, p, div, span {
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}

@@ -1,3 +1,17 @@
 // Place all the styles related to the LambData controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+table {
+  border: 1px dotted black;
+  border-collapse: collapse;
+  margin: auto;
+  th, td {
+    border: 1px dotted black;
+    padding: 5px;
+
+    &.centered {
+      text-align: center;
+    }
+  }
+}
